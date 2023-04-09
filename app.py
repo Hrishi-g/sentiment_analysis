@@ -2,7 +2,7 @@ from sentiment import SentimentAnalysis
 import streamlit as st
 import pandas as pd
 import emoji
-from IPython.display import Audio
+#from IPython.display import Audio
 import base64
 # Define Streamlit app
 #
@@ -67,5 +67,5 @@ if input_text:
     audio_bytes = audio_file.read()
     #st.audio(audio_bytes, format="audio/mp3")
     audio_b64 = base64.b64encode(audio_bytes).decode("utf-8")
-    b64 = base64.b64encode(data).decode()
-    st.markdown(f'<audio controls="controls"><source src="data:audio/mp3;base64,{b64}" type="audio/mp3" /></audio>', unsafe_allow_html=True)
+    #b64 = base64.b64encode(data).decode()
+    st.markdown(f'<audio controls="controls"><source src="data:audio/mp3;base64,{audio_b64}" type="audio/mp3" /></audio>', unsafe_allow_html=True)
